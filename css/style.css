@@ -1,0 +1,580 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100vh;
+    transition: 0.5s;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+.logo{
+    width: 105px;
+}
+
+ion-icon{
+    font-size: 2rem;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.moon{
+    display: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(250, 133, 24);
+    box-shadow: .5px .5px 10px .5px black;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    margin-top: 2rem;
+    display: flex;
+    width: 80%;
+    position: relative;
+    background-color: aliceblue;
+    box-shadow: 5px 5px 5px 0px black;
+}
+
+.card-image{
+    padding: 2rem;
+    width: 50%;
+    position: relative;
+    background-image: url(../image/AMD-Ryzen-7000-key-art.png);
+    background-position:center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-clip: inherit;
+}
+
+.card-image span{
+    position: absolute;
+    top: 85px;
+    right: 18px;
+    color: aliceblue;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.card img{
+    width: 500px;
+    position: absolute;
+    right: -2.5rem;
+    top: 4rem;
+    animation: slide-right 1.5s ease-in-out;
+}
+
+.card-details{
+    width: 50%;
+    padding: 2rem;
+}
+
+.card-details h2{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.description{
+    line-height: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.price-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slide-left 1.5s ease-out;
+}
+
+.price{
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.btn{
+    border: none;
+    width: 7rem;
+    height: 3rem;
+    border-radius: 25px;
+    color: aliceblue;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: rgb(234, 113, 0);
+}
+
+/*DARK THEME*/
+.dark, .dark header{
+    background-color: rgb(16, 16, 16);
+    color: aliceblue;
+}
+
+.dark header{
+    box-shadow: .5px .5px 10px .5px rgba(250, 133, 24, 0.861);
+}
+
+.dark .card{
+    background-color: rgb(22, 21, 21);
+}
+
+.dark .btn{
+    color: black;
+}
+
+.dark h2, .dark .price{
+    color: rgba(250, 133, 24, 0.861);
+}
+
+.dark .moon{
+    display: block;
+}
+
+.dark .sunny{
+    display: none;
+}
+
+/*ANIMATION*/
+@keyframes slide-right {
+    0% {
+    -webkit-transform: translateX(-100vw);
+        transform: translateX(-100vw);
+    }
+    100% {
+    -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slide-left {
+    0% {
+    -webkit-transform: translateX(100vw);
+        transform: translateX(100vw);
+    }
+    100% {
+    -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+/*Responsive area*/
+
+/*760*/
+@media screen and (max-width:770px){
+    .card{
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 80vh;
+        position: relative;
+        background-color: aliceblue;
+        box-shadow: 5px 5px 5px 0px black;
+    }
+
+    .card-details{
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .card-image{
+        padding: 2rem;
+        width: 100%;
+        height: 50vh;
+        position: relative;
+        background-image: url(../image/AMD-Ryzen-7000-key-art.png);
+        background-position:center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-clip: inherit;
+    }
+
+    .card img{
+        width: 450px;
+        position: absolute;
+        right: -2.5rem;
+        top: 2rem;
+        animation: slide-right 1.5s ease-in-out;
+    }
+}
+
+/*425*/
+@media screen and (max-width:425px){
+    .card{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 100vh;
+        position: relative;
+        background-color: aliceblue;
+        box-shadow: 5px 5px 5px 0px black;
+    }
+
+    .card-details{
+        margin-top: 285px;
+        width: 100%;
+        height: 100vh;
+        padding: 2rem;
+    }
+
+    .card-image{
+        padding: 2rem;
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        background-image: url(../image/AMD-Ryzen-7000-key-art.png);
+        background-position:center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-clip: inherit;
+    }
+
+    .card img{
+        width: 250px;
+        position: absolute;
+        right: -1.2rem;
+        top: 4rem;
+        animation: slide-right 1.5s ease-in-out;
+    }
+
+    .price{
+        font-size:25px;
+    }
+
+    .price-container{
+        align-items: center;
+        animation: none;
+    }
+}
+
+/*412*/
+@media screen and (max-width:412px){
+    .card{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 100vh;
+        position: relative;
+        background-color: aliceblue;
+        box-shadow: 5px 5px 5px 0px black;
+    }
+
+    .card-details{
+        margin-top: 285px;
+        width: 100%;
+        height: 100vh;
+        padding: 2rem;
+    }
+
+    .card-image{
+        padding: 2rem;
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        background-image: url(../image/AMD-Ryzen-7000-key-art.png);
+        background-position:center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-clip: inherit;
+    }
+
+    .card img{
+        width: 250px;
+        position: absolute;
+        right: -1.2rem;
+        top: 4rem;
+        animation: slide-right 1.5s ease-in-out;
+    }
+
+    .price{
+        font-size:25px;
+    }
+
+    .price-container{
+        align-items: center;
+        animation: none;
+    }
+}
+
+/*393*/
+@media screen and (max-width:393px){
+    .card{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 120vh;
+        position: relative;
+        background-color: aliceblue;
+        box-shadow: 5px 5px 5px 0px black;
+    }
+
+    .card-details{
+        margin-top: 285px;
+        width: 100%;
+        height: 100vh;
+        padding: 2rem;
+    }
+
+    .card-image{
+        padding: 2rem;
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        background-image: url(../image/AMD-Ryzen-7000-key-art.png);
+        background-position:center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-clip: inherit;
+    }
+
+    .card img{
+        width: 250px;
+        position: absolute;
+        right: -1.2rem;
+        top: 4rem;
+        animation: slide-right 1.5s ease-in-out;
+    }
+
+    .price{
+        font-size:25px;
+    }
+
+    .price-container{
+        align-items: center;
+        animation: none;
+    }
+}
+
+/*375*/
+@media screen and (max-width:375px){
+    .card{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 140vh;
+        position: relative;
+        background-color: aliceblue;
+        box-shadow: 5px 5px 5px 0px black;
+    }
+
+    .card-details{
+        margin-top: 285px;
+        width: 100%;
+        height: 100vh;
+        padding: 2rem;
+    }
+
+    .card-image{
+        padding: 2rem;
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        background-image: url(../image/AMD-Ryzen-7000-key-art.png);
+        background-position:center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-clip: inherit;
+    }
+
+    .card img{
+        width: 250px;
+        position: absolute;
+        right: -1.2rem;
+        top: 4rem;
+        animation: slide-right 1.5s ease-in-out;
+    }
+
+    .price{
+        font-size:25px;
+    }
+
+    .price-container{
+        align-items: center;
+        animation: none;
+    }
+}
+
+/*360*/
+@media screen and (max-width:360px){
+    .card{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 150vh;
+        position: relative;
+        background-color: aliceblue;
+        box-shadow: 5px 5px 5px 0px black;
+    }
+
+    .card-details{
+        margin-top: 285px;
+        width: 100%;
+        height: 100vh;
+        padding: 2rem;
+    }
+
+    .card-image{
+        padding: 2rem;
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        background-image: url(../image/AMD-Ryzen-7000-key-art.png);
+        background-position:center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-clip: inherit;
+    }
+
+    .card img{
+        width: 250px;
+        position: absolute;
+        right: -1.2rem;
+        top: 4rem;
+        animation: slide-right 1.5s ease-in-out;
+    }
+
+    .price{
+        font-size:25px;
+    }
+
+    .price-container{
+        align-items: center;
+        animation: none;
+    }
+}
+
+/*320*/
+@media screen and (max-width:320px){
+    .card{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 110vh;
+        position: relative;
+        background-color: aliceblue;
+        box-shadow: 5px 5px 5px 0px black;
+    }
+
+    .card-details{
+        margin-top: 285px;
+        width: 100%;
+        height: 100vh;
+        padding: 2rem;
+    }
+
+    .card-image{
+        padding: 2rem;
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        background-image: url(../image/AMD-Ryzen-7000-key-art.png);
+        background-position:center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-clip: inherit;
+    }
+
+    .card img{
+        width: 250px;
+        position: absolute;
+        right: -1.2rem;
+        top: 4rem;
+        animation: slide-right 1.5s ease-in-out;
+    }
+
+    .price{
+        font-size:25px;
+    }
+
+    .price-container{
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        animation: none;
+    }
+}
+
+/*280*/
+@media screen and (max-width:280px){
+    .card{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 180vh;
+        position: relative;
+        background-color: aliceblue;
+        box-shadow: 5px 5px 5px 0px black;
+    }
+
+    .card-details{
+        margin-top: 285px;
+        width: 100%;
+        height: 100vh;
+        padding: 2rem;
+    }
+
+    .card-image{
+        padding: 2rem;
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        background-image: url(../image/AMD-Ryzen-7000-key-art.png);
+        background-position:center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-clip: inherit;
+    }
+
+    .card img{
+        width: 250px;
+        position: absolute;
+        right: -1.2rem;
+        top: 4rem;
+        animation: slide-right 1.5s ease-in-out;
+    }
+
+    .price{
+        font-size:25px;
+    }
+
+    .price-container{
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        animation: none;
+    }
+}
